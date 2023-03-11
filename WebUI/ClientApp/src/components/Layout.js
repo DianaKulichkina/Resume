@@ -1,18 +1,30 @@
-import React, { Component } from 'react';
-import { Container } from 'reactstrap';
-import { NavMenu } from './NavMenu';
+import { CssBaseline } from '@mui/material'
+import { Container, Box } from '@mui/system'
+import React from 'react'
+import NavBar from './NavBar';
+import Profile from './NewProfile';
+import MobNavBar from './MobNavBar';
 
-export class Layout extends Component {
-  static displayName = Layout.name;
-
-  render () {
-    return (
-      <div>
-        <NavMenu />
-        <Container>
-          {this.props.children}
-        </Container>
-      </div>
-    );
-  }
+export default function Layout({ children }) {
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <Container sx={{ px: { xs: 0, md: 5} }} disableGutters>
+        <Box sx={{ 
+          bgcolor: '#cfe8fc', 
+          height: { xs: "auto", md: '100vh' }, 
+          display: 'flex', 
+          flexDirection: { xs: "column", md: "row" }, 
+          alignItems: "center", 
+          justifyContent:"center",
+          overflowY: { xs: "scroll", md: "auto" } 
+          }}>
+            <NavBar />
+            <MobNavBar />
+            <Profile />
+            {children}
+        </Box>
+      </Container>
+    </React.Fragment>
+  )
 }
