@@ -16,6 +16,7 @@ export const CardWrapper = ({ children, sx }) => {
             sx={ sx ?? { 
                 width        : { xs: "100%", md: 450 }, 
                 minHeight    : { xs: "calc(100vh - 91px)", md:"450px" }, 
+                maxHeight    : { xs: "calc(100vh - 91px)", md:"450px" }, 
                 boxSizing    : "border-box", 
                 padding      : 5, 
                 borderRadius : { xs: '0', md: '0px 16px 16px 0px' },
