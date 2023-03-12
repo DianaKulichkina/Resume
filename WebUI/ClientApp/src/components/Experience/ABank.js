@@ -30,7 +30,7 @@ export default function ABank() {
               }}/>
         }
         action={
-          <IconButton LinkComponent={Link} to="/work" aria-label="close"sx={{color: cyan[900]}}>
+          <IconButton LinkComponent={Link} to="/experience" aria-label="close"sx={{color: cyan[900]}}>
             <CloseIcon />
           </IconButton>
         }
