@@ -39,7 +39,7 @@ const WorkExperiencePC = () => {
                   <Avatar 
                     variant={"rounded"} 
                     alt="Alfa" 
-                    src={'https://alfabank.servicecdn.ru/media/footer-alfa-logo_1025x1025_common_19-01-2021.svg'} 
+                    src={'https://alfabank.st/media/footer-alfa-logo_1025x1025_common_31-07-2019.svg'} 
                     sx={{
                       width  : 40,
                       height : 40,
