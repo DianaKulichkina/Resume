@@ -24,8 +24,8 @@ export default function AlfaBank() {
         }}>
       <CardHeader sx={{textColor: cyan[900]}}
         avatar={
-            <Avatar variant={"rounded"} alt="Alfa Bank" src={'https://pnptc-media.s3.amazonaws.com/images/alfa-additional-logo_en_red.max-500x500.png'} style={{
-                width: 145,
+            <Avatar variant={"rounded"} alt="Alfa Bank" src={'https://alfabank.st/media/footer-alfa-logo_1025x1025_common_31-07-2019.svg'} style={{
+                width: 40,
                 height: 40,
               }}/>
         }
