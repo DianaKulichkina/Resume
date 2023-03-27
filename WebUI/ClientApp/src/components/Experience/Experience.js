@@ -39,7 +39,7 @@ const WorkExperiencePC = () => {
                   <Avatar 
                     variant={"rounded"} 
                     alt="Alfa" 
-                    src={'https://alfabank.servicecdn.ru/media/footer-alfa-logo_1025x1025_common_19-01-2021.svg'} 
+                    src={'https://alfabank.st/media/footer-alfa-logo_1025x1025_common_31-07-2019.svg'} 
                     sx={{
                       width  : 40,
                       height : 40,
@@ -70,7 +70,7 @@ const WorkExperiencePC = () => {
               </Button>
             </Grid>
           </Grid>
-          <Typography variant="subtitle2" sx={{ fontFamily:'Titillium Web', color: cyan[900], mt: 2 }}><span style={{ color: "red" }}>*</span> Click on icon to see more details.</Typography>
+          <Typography variant="subtitle2" sx={{ fontFamily:'Titillium Web', color: cyan[900], mt: 0 }}><span style={{ color: "red" }}>*</span> Click on icon to see more details.</Typography>
         </CardContent>
       </CardWrapper>
     </Box>

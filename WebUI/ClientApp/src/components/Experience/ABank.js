@@ -27,8 +27,8 @@ export default function ABank() {
         padding: 5, 
         borderRadius: {xs: '0', md: '0px 16px 16px 0px'},
         }}>
-      <CardHeaderWrapperAvatar source={source} alt={alt} title={title} subheader={subheader} to={"/experience"} />
-      <CardContent>
+    <CardHeaderWrapperAvatar source={source} alt={alt} title={title} subheader={subheader} to={"/experience"} />
+    <CardContent>
     <Typography variant="subtitle1" sx={{ml:2,fontFamily:'Titillium Web', color: cyan[700]}}>
         Position: Loan Specialist
         </Typography>
