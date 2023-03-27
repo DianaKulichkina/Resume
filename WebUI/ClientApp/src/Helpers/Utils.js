@@ -68,7 +68,7 @@ export const CardHeaderWrapperAvatar = ({ title, subheader, source, alt, to }) =
             title={title}
             titleTypographyProps={{ fontFamily:'Titillium Web', color: cyan[900], variant: "h6" }}
             subheader={subheader}
-            subheaderTypographyProps={{ fontFamily:'Titillium Web', color: cyan[900], variant: "subtitle2" }}
+            subheaderTypographyProps={{ fontFamily:'Titillium Web', color: cyan[800], variant: "subtitle2" }}
             action={
                 to ?
                 <IconButton 

@@ -9,7 +9,12 @@ import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 import { Box } from '@mui/system';
 import { blueGrey, cyan } from '@mui/material/colors';
+import { CardWrapper , CardHeaderWrapper, CardHeaderWrapperAvatar} from '../../Helpers/Utils';
 
+const title = "Commercial Bank Globus";
+const subheader = "Jan 2015 - Aug 2015";
+const source = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTkH-016NEd5pRjEcAJjFflplMZHTbIxH1bAnPN_KCVCOup6vtJyo1fC9sWzFfVBuwdn4&usqp=CAU";
+const alt = "Globus Bank icon";
 
 export default function GlobusBank() {
 
@@ -17,38 +22,24 @@ export default function GlobusBank() {
   return (
     <Card sx={{ 
         width: { xs: "100%", md: 450 }, 
-        height: { xs: "650px", md:"450px" }, 
+        height: { xs: "650px", md:"450px" },
         boxSizing: "border-box", 
         padding: 5, 
         borderRadius: {xs: '0', md: '0px 16px 16px 0px'},
         }}>
-      <CardHeader sx={{textColor: cyan[900]}}
-        avatar={
-            <Avatar variant={"rounded"} alt="Globus" src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTkH-016NEd5pRjEcAJjFflplMZHTbIxH1bAnPN_KCVCOup6vtJyo1fC9sWzFfVBuwdn4&usqp=CAU'} style={{
-                width: 40,
-                height: 40,
-              }}/>
-        }
-        action={
-          <IconButton LinkComponent={Link} to="/work" aria-label="close"sx={{color: cyan[900]}}>
-            <CloseIcon />
-          </IconButton>
-        }
-        title="Commercial Bank Globus"
-        subheader="Jan 2015 - Aug 2015"
-      />
+      <CardHeaderWrapperAvatar source={source} alt={alt} title={title} subheader={subheader} to={"/experience"} />
       <CardContent>
-    <Typography variant="subtitle1" color="text.secondary" align='center' sx={{color: cyan[900]}}>
+    <Typography variant="subtitle1" sx={{ml:2,fontFamily:'Titillium Web', color: cyan[700]}}>
         Position: Loan Specialist
         </Typography>
         <Box m={2} >
-                <Typography variant="body1" color="text.secondary" sx={{color: cyan[900]}}>
+                <Typography variant="body2" sx={{fontFamily:'Titillium Web', color: cyan[700]}}>
                 1. Analyzing applicants financial status to determine feasibility of granting loans.
                 </Typography>
-                <Typography variant="body1" color="text.secondary" sx={{color: cyan[900]}}>
+                <Typography variant="body2" sx={{fontFamily:'Titillium Web', color: cyan[700]}}>
                 2. Analyzing applicants financial status to determine feasibility of granting loans.Submitting applications to credit analysts for verification and recommendation.
                 </Typography>
-                <Typography variant="body1" color="text.secondary" sx={{color: cyan[900]}}>
+                <Typography variant="body2" sx={{fontFamily:'Titillium Web', color: cyan[700]}}>
                 3. Controlling of loan payments, preparation of daily reports.
                 </Typography>
         </Box>
