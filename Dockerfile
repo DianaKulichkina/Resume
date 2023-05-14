@@ -1,14 +1,20 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
-WORKDIR /App
-COPY . ./
-RUN dotnet restore
+# Build Stage
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /source
+COPY . .
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y nodejs \
-    npm      
-RUN dotnet publish -c Release -o out
+    npm  
+RUN dotnet restore "./WebUI/WebUI.csproj" --disable-parallel
+RUN dotnet publish "./WebUI/WebUI.csproj" -c release -o /app --no-restore
 
-
+# Serve Stage
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
-WORKDIR /App
-COPY --from=build-env /App/out .
-ENTRYPOINT ["dotnet", "webui/bin/release/net6.0/webui.dll"]
+WORKDIR /app
+COPY --from=build /app ./
+
+EXPOSE 5000
+
+ENV ASPNETCORE_URLS=http://*:5000
+
+ENTRYPOINT ["dotnet", "WebUI.dll"]
