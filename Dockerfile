@@ -15,5 +15,5 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /App
 COPY --from=build-env /App/out .
-EXPOSE ${PORT}
+EXPOSE 0.0.0.0
 ENTRYPOINT ["dotnet", "WebUI.dll"]
