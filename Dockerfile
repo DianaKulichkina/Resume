@@ -1,12 +1,15 @@
-# Build Stage
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
-WORKDIR /source
-COPY . .
-RUN dotnet restore "./WebUI/WebUI.csproj" --disable-parallel
-RUN dotnet publish "./WebUI/WebUI.csproj" -c release -o /app out --no-restore
+WORKDIR /App
 
-# Serve Stage
+# Copy everything
+COPY . ./
+# Restore as distinct layers
+RUN dotnet restore
+# Build and publish a release
+RUN dotnet publish -c Release -o out
+
+# Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
-WORKDIR /app
-COPY --from=build-env /app ./
-ENTRYPOINT ["dotnet", "Resume.WebUI.dll"]
+WORKDIR /App
+COPY --from=build-env /App/out .
+ENTRYPOINT ["dotnet", "DotNet.Docker.dll"]
