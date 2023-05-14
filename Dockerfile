@@ -6,6 +6,9 @@ COPY . ./
 # Restore as distinct layers
 RUN dotnet restore
 # Build and publish a release
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y nodejs \
+    npm                       # note this one
 RUN dotnet publish -c Release -o out
 
 # Build runtime image
