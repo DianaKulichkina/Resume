@@ -13,8 +13,10 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build /app ./
 
-EXPOSE 44463
+EXPOSE 5000
+EXPOSE 5001
 
-ENV ASPNETCORE_URLS=http://*:44463
+ENV ASPNETCORE_URLS=http://*:5000
+ENV ASPNETCORE_URLS=http://*:5001
 
 ENTRYPOINT ["dotnet", "WebUI.dll"]
