@@ -16,7 +16,5 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /App
 COPY --from=build-env /App/out .
 EXPOSE 5000
-EXPOSE 5001
 ENV ASPNETCORE_URLS=http://*:5000
-ENV ASPNETCORE_URLS=http://*:5001
-ENTRYPOINT ["dotnet", "WebUI.dll"]
+ENTRYPOINT ["dotnet", "WebUI.dll"] --urls="http://0.0.0.0:${PORT:-5000}"
