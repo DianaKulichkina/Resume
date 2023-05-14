@@ -17,4 +17,4 @@ WORKDIR /App
 COPY --from=build-env /App/out .
 EXPOSE 5000
 ENV ASPNETCORE_URLS=http://*:5000
-ENTRYPOINT ["dotnet", "WebUI.dll"] --urls="http://0.0.0.0:${PORT:-5000}"
+ENTRYPOINT ["dotnet", "WebUI.dll", --urls="http://0.0.0.0:${PORT:-5000}"]
