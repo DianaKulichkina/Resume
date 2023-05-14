@@ -14,9 +14,5 @@ WORKDIR /app
 COPY --from=build /app ./
 
 EXPOSE 5000
-EXPOSE 5001
-
-ENV ASPNETCORE_URLS=http://*:5000
-ENV ASPNETCORE_URLS=http://*:5001
 
 ENTRYPOINT ["dotnet", "WebUI.dll"]
